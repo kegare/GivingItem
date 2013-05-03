@@ -2,6 +2,7 @@ package mods.givingitem;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import cpw.mods.fml.common.Mod;
@@ -10,7 +11,7 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = "GivingItem", name = "GivingItem", version = "1.0.1")
+@Mod(modid = "GivingItem", name = "GivingItem", version = "1.0.2")
 @NetworkMod(clientSideRequired = false, serverSideRequired = false)
 public class GivingItem
 {
@@ -20,7 +21,7 @@ public class GivingItem
 	@Init
 	public void init(FMLInitializationEvent event)
 	{
-		CommonProxy.proxy.load();
+		MinecraftForge.EVENT_BUS.register(instance);
 	}
 
 	@ForgeSubscribe
