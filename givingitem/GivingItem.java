@@ -1,4 +1,4 @@
-package mods.givingitem;
+package givingitem;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -6,22 +6,37 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Init;
-import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
-@Mod(modid = "GivingItem", name = "GivingItem", version = "1.0.2")
-@NetworkMod(clientSideRequired = false, serverSideRequired = false)
+@Mod
+(
+	modid = "givingitem",
+	name = "GivingItem",
+	version = GivingItem.version,
+	dependencies = "required-after:Forge"
+)
+@NetworkMod
+(
+	clientSideRequired = false,
+	serverSideRequired = false
+)
 public class GivingItem
 {
-	@Instance("GivingItem")
-	public static GivingItem instance;
+	static final String version = "1.0.3";
 
-	@Init
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event)
+	{
+		event.getModMetadata().version = version;
+	}
+
+	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		MinecraftForge.EVENT_BUS.register(instance);
+		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@ForgeSubscribe
