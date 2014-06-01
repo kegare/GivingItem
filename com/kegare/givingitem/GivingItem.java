@@ -1,5 +1,7 @@
 package com.kegare.givingitem;
 
+import java.util.Map;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -12,6 +14,8 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.network.NetworkCheckHandler;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = "kegare.givingitem")
 public class GivingItem
@@ -20,6 +24,12 @@ public class GivingItem
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+	@NetworkCheckHandler
+	public boolean netCheckHandler(Map<String, String> mods, Side side)
+	{
+		return true;
 	}
 
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
