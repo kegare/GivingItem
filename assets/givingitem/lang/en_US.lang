@@ -1,0 +1,11 @@
+# Localization file : en_US
+
+givingitem.config.title=GivingItem Configuration
+givingitem.config.general.giveToPlayer=Give to player
+givingitem.config.general.giveToPlayer.tooltip=You can give the held item to other players.
+givingitem.config.general.giveToMob=Give to mob
+givingitem.config.general.giveToMob.tooltip=You can give the held item to other mobs.
+givingitem.config.general.swapWithPlayer=Swap with player
+givingitem.config.general.swapWithPlayer.tooltip=You can swap the held item to other players. This option valid when "Give to player" is true.
+givingitem.config.general.swapWithMob=Swap with mob
+givingitem.config.general.swapWithMob.tooltip=You can swap the held item to other mobs. This option valid when "Give to mob" is true.
