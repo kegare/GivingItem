@@ -1,17 +1,17 @@
-package com.kegare.givingitem;
+package givingitem;
 
 import java.io.File;
 import java.util.List;
 
-import net.minecraft.util.StatCollector;
+import org.apache.logging.log4j.Level;
+
+import com.google.common.collect.Lists;
+
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
-
-import org.apache.logging.log4j.Level;
-
-import com.google.common.collect.Lists;
 
 public class Config
 {
@@ -50,30 +50,35 @@ public class Config
 
 		String category = Configuration.CATEGORY_GENERAL;
 		Property prop;
+		String comment;
 		List<String> propOrder = Lists.newArrayList();
 
 		prop = config.get(category, "giveToPlayer", true);
 		prop.setLanguageKey("givingitem.config." + category + "." + prop.getName());
-		prop.comment = StatCollector.translateToLocal(prop.getLanguageKey() + ".tooltip");
-		prop.comment += " [default: " + prop.getDefault() + "]";
+		comment = I18n.translateToLocal(prop.getLanguageKey() + ".tooltip");
+		comment += " [default: " + prop.getDefault() + "]";
+		prop.setComment(comment);
 		propOrder.add(prop.getName());
 		giveToPlayer = prop.getBoolean(giveToPlayer);
 		prop = config.get(category, "giveToMob", true);
 		prop.setLanguageKey("givingitem.config." + category + "." + prop.getName());
-		prop.comment = StatCollector.translateToLocal(prop.getLanguageKey() + ".tooltip");
-		prop.comment += " [default: " + prop.getDefault() + "]";
+		comment = I18n.translateToLocal(prop.getLanguageKey() + ".tooltip");
+		comment += " [default: " + prop.getDefault() + "]";
+		prop.setComment(comment);
 		propOrder.add(prop.getName());
 		giveToMob = prop.getBoolean(giveToMob);
 		prop = config.get(category, "swapWithPlayer", false);
 		prop.setLanguageKey("givingitem.config." + category + "." + prop.getName());
-		prop.comment = StatCollector.translateToLocal(prop.getLanguageKey() + ".tooltip");
-		prop.comment += " [default: " + prop.getDefault() + "]";
+		comment = I18n.translateToLocal(prop.getLanguageKey() + ".tooltip");
+		comment += " [default: " + prop.getDefault() + "]";
+		prop.setComment(comment);
 		propOrder.add(prop.getName());
 		swapWithPlayer = prop.getBoolean(swapWithPlayer);
 		prop = config.get(category, "swapWithMob", false);
 		prop.setLanguageKey("givingitem.config." + category + "." + prop.getName());
-		prop.comment = StatCollector.translateToLocal(prop.getLanguageKey() + ".tooltip");
-		prop.comment += " [default: " + prop.getDefault() + "]";
+		comment = I18n.translateToLocal(prop.getLanguageKey() + ".tooltip");
+		comment += " [default: " + prop.getDefault() + "]";
+		prop.setComment(comment);
 		propOrder.add(prop.getName());
 		swapWithMob = prop.getBoolean(swapWithMob);
 
