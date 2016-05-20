@@ -128,7 +128,7 @@ public class GivingItem
 
 	private void playGiveSound(Entity entity, Entity target)
 	{
-		entity.playSound(SoundEvents.entity_item_pickup, 1.0F, 1.0F);
-		target.playSound(SoundEvents.entity_item_pickup, 1.0F, 1.0F);
+		entity.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, 1.0F);
+		target.playSound(SoundEvents.ENTITY_ITEM_PICKUP, 1.0F, 1.0F);
 	}
 }
