@@ -60,7 +60,7 @@ public class GivingItem
 			ItemStack held = event.getItemStack();
 			Entity entity = event.getTarget();
 
-			if (held == null || !player.isSneaking() || !entity.isEntityAlive() || held.getItem() instanceof ItemBucket)
+			if (held.isEmpty() || !player.isSneaking() || !entity.isEntityAlive() || held.getItem() instanceof ItemBucket)
 			{
 				return;
 			}
@@ -81,9 +81,9 @@ public class GivingItem
 
 					event.setCanceled(true);
 				}
-				else if (target.getHeldItem(hand) == null)
+				else if (target.getHeldItem(hand).isEmpty())
 				{
-					player.setHeldItem(hand, null);
+					player.setHeldItem(hand, ItemStack.EMPTY);
 					target.setHeldItem(hand, itemstack);
 
 					playGiveSound(player, target);
@@ -116,7 +116,7 @@ public class GivingItem
 					{
 						held = player.getHeldItem(hand);
 
-						if (held == null || held.stackSize <= 0)
+						if (held.isEmpty() || held.getCount() <= 0)
 						{
 							player.setHeldItem(hand, itemstack);
 						}
