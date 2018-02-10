@@ -1,4 +1,3 @@
-# Localization file : ja_JP
 
 givingitem.config.title=GivingItemの設定
 givingitem.config.general.giveToPlayer=プレイヤーに与える
@@ -6,6 +5,6 @@ givingitem.config.general.giveToPlayer.tooltip=他のプレイヤーに手持ち
 givingitem.config.general.giveToMob=モブに与える
 givingitem.config.general.giveToMob.tooltip=他のモブに手持ちのアイテムを与えることができます。
 givingitem.config.general.swapWithPlayer=プレイヤーと交換
-givingitem.config.general.swapWithPlayer.tooltip=他のプレイヤーと手持ちのアイテムの交換ができます。"プレイヤーに与える"がtrueな時に有効です。
+givingitem.config.general.swapWithPlayer.tooltip=他のプレイヤーと手持ちのアイテムの交換ができます。"プレイヤーに与える"設定が有効である必要があります。
 givingitem.config.general.swapWithMob=モブと交換
-givingitem.config.general.swapWithMob.tooltip=他のモブと手持ちのアイテムの交換ができます。"モブに与える"がtrueな時に有効です。
+givingitem.config.general.swapWithMob.tooltip=他のモブと手持ちのアイテムの交換ができます。"モブに与える"設定が有効である必要があります。

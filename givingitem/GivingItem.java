@@ -22,7 +22,12 @@ import net.minecraftforge.fml.common.network.NetworkCheckHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod(modid = "givingitem", guiFactory = "givingitem.client.GivingGuiFactory")
+@Mod
+(
+	modid = "givingitem",
+	guiFactory = "givingitem.client.GivingGuiFactory",
+	acceptedMinecraftVersions = "[1.12,)"
+)
 public class GivingItem
 {
 	@EventHandler

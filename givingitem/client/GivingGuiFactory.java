@@ -15,19 +15,19 @@ public class GivingGuiFactory implements IModGuiFactory
 	public void initialize(Minecraft mc) {}
 
 	@Override
-	public Class<? extends GuiScreen> mainConfigGuiClass()
+	public boolean hasConfigGui()
 	{
-		return GivingConfigGui.class;
+		return true;
+	}
+
+	@Override
+	public GuiScreen createConfigGui(GuiScreen parentScreen)
+	{
+		return new GivingConfigGui(parentScreen);
 	}
 
 	@Override
 	public Set<RuntimeOptionCategoryElement> runtimeGuiCategories()
-	{
-		return null;
-	}
-
-	@Override
-	public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element)
 	{
 		return null;
 	}
